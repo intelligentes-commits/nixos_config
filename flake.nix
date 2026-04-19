@@ -24,7 +24,7 @@
     nixosConfigurations.ideapad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        .configuration.nix
+        ./configuration.nix
         niri.nixosModules.niri
         home-manager.nixosModules.home-manager
         {
