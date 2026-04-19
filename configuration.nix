@@ -5,28 +5,25 @@
     ./hardware-configuration.nix  # железо, не трогать
   ];
 
-  # Загрузчик (UEFI)
+  # ===== ЗАГРУЗЧИК =====
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Имя машины
+  # ===== СЕТЬ =====
   networking.hostName = "ideapad";
   networking.networkmanager.enable = true;
 
-  # Пользователь
+  # ===== ПОЛЬЗОВАТЕЛИ =====
   users.users.int = { # int = имя пользователя
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];  # wheel = доступ к sudo
-    initialPassword = "changeme"; # изначальный пароль
   };
+  security.sudo.wheelNeedsPassword = false;  # или true, если хочешь пароль
 
-  # Пакеты
+  # ===== ПАКЕТЫ =====
   environment.systemPackages = with pkgs; [
     git
   ];
-
-  # Без этого нельзя стать root
-  security.sudo.wheelNeedsPassword = false;  # или true, если хочешь пароль
 
   system.stateVersion = "25.05"; # это тоже не трогать
 }
