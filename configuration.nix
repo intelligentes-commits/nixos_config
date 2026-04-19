@@ -29,5 +29,21 @@
     "/share/xdg-desktop-portal"
   ];
 
+  # ===== DISPLAY MANAGER =====
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --cmd niri-session";
+        user = "greeter";
+      };
+    };
+  };
+
+  # Для хранения паролей (wifi, ssh ключи и т.д.)
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greeter.enableGnomeKeyring = true;
+  programs.dconf.enable = true;
+
   system.stateVersion = "25.05"; # это тоже не трогать
 }
