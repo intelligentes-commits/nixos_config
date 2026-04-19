@@ -10,7 +10,7 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.ideapad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         .configuration.nix
