@@ -20,6 +20,11 @@
     initialPassword = "changeme"; # изначальный пароль
   };
 
+  # Пакеты
+  environment.systemPackages = with pkgs; [
+    git
+  ];
+
   # Без этого нельзя стать root
   security.sudo.wheelNeedsPassword = false;  # или true, если хочешь пароль
 
