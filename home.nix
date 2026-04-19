@@ -1,4 +1,4 @@
-{ config, pkgs, helium ... }: {
+{ config, pkgs, helium, ... }: {
   # ===== ОСНОВНОЕ =====
   home.username = "int";
   home.homeDirectory = "/home/int";
