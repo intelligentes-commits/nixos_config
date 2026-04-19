@@ -9,7 +9,17 @@
   ];
 
   # ===== NIRI =====
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    settings = {
+      # Keybinds
+      binds = with config.lib.niri.actions; {
+        "Mod+T".action = spawn "kitty";
+        "Mod+Q".action = close-window;
+        "Mod+Shift+E".action = quit;  # выход из niri
+      };
+    };
+  };
 
   # ===== KITTY =====
   programs.kitty.enable = true;
