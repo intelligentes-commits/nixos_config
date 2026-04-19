@@ -24,6 +24,10 @@
   environment.systemPackages = with pkgs; [
     git
   ];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 
   system.stateVersion = "25.05"; # это тоже не трогать
 }
