@@ -11,11 +11,12 @@
 
   # Имя машины
   networking.hostName = "ideapad";
+  networking.networkmanager.enable = true;
 
   # Пользователь
   users.users.int = { # int = имя пользователя
     isNormalUser = true;
-    extraGroups = [ "wheel" ];  # wheel = доступ к sudo
+    extraGroups = [ "wheel" "networkmanager" ];  # wheel = доступ к sudo
     initialPassword = "changeme"; # изначальный пароль
   };
 
