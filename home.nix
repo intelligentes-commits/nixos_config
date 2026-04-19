@@ -14,6 +14,7 @@
     settings = {
       binds = with config.lib.niri.actions; {
         "Mod+T".action = spawn "kitty";
+        "Mod+D".action = spawn "fuzzel";
         "Mod+Q".action = close-window;
         "Mod+Shift+E".action = quit;
       };
@@ -22,6 +23,16 @@
       spawn-at-startup = [
         { command = [ "waybar" ]; }
       ];
+    };
+  };
+
+  # ===== FUZZEL (лаунчер) =====
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      main = {
+        terminal = "kitty";
+      };
     };
   };
 
