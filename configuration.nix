@@ -22,5 +22,5 @@
   # Без этого нельзя стать root
   security.sudo.wheelNeedsPassword = false;  # или true, если хочешь пароль
 
-  system.stateVersion = "25.05"; # это тоже не трогать
+  system.stateVersion = "24.11"; # это тоже не трогать
 }
