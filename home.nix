@@ -15,7 +15,16 @@
     swappy
     wl-clipboard
     cliphist
+    file
+    imv
+    mpv
+    p7zip
     ripgrep
+    swww
+    unrar
+    unzip
+    xdg-utils
+    zip
   ];
 
   # ===== SHELL =====
@@ -33,6 +42,7 @@
       ll = "eza -la --icons --group-directories-first";
       la = "eza -a --icons --group-directories-first";
       grep = "rg";
+      wall = "swww img --transition-type any --transition-duration 1";
     };
   };
 
@@ -89,6 +99,7 @@
       spawn-at-startup = [
         { command = [ "waybar" ]; }
         { command = [ "mako" ]; }
+        { command = [ "swww-daemon" ]; }
         { command = [ "wl-paste" "--watch" "cliphist" "store" ]; }
       ];
     };
