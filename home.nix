@@ -132,7 +132,7 @@
 
         modules-left = [ "niri/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "network" "battery" "pulseaudio" ];
+        modules-right = [ "tray" "bluetooth" "network" "battery" "pulseaudio" ];
 
         "clock" = {
           format = "{:%H:%M}";
@@ -149,9 +149,24 @@
           format-disconnected = "offline";
         };
 
+        "bluetooth" = {
+          format = "BT {status}";
+          format-disabled = "BT off";
+          format-connected = "BT {device_alias}";
+          tooltip-format = "{controller_alias} {controller_address}";
+          tooltip-format-connected = "{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias} {device_address}";
+          on-click = "blueman-manager";
+        };
+
         "pulseaudio" = {
           format = "{volume}% {icon}";
           format-icons = { default = [ "" "" "" ]; };
+        };
+
+        "tray" = {
+          icon-size = 16;
+          spacing = 8;
         };
       };
     };

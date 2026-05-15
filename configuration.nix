@@ -15,6 +15,12 @@
   networking.hostName = "ideapad";
   networking.networkmanager.enable = true;
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
   # ===== ПОЛЬЗОВАТЕЛИ =====
   users.users.int = { # int = имя пользователя
     isNormalUser = true;
