@@ -7,9 +7,12 @@
   home.packages = with pkgs; [
     helium.packages.x86_64-linux.default  # Helium browser
     eza
+    ffmpegthumbnailer
     fd
     grim
+    imagemagick
     libnotify
+    localsend
     mako
     slurp
     swappy
@@ -17,13 +20,19 @@
     cliphist
     file
     imv
+    jq
     mpv
+    obsidian
+    ouch
     p7zip
+    poppler
     ripgrep
     swww
+    telegram-desktop
     unrar
     unzip
     xdg-utils
+    yazi
     zip
   ];
 
@@ -43,6 +52,7 @@
       la = "eza -a --icons --group-directories-first";
       grep = "rg";
       wall = "swww img --transition-type any --transition-duration 1";
+      y = "yazi";
     };
   };
 
