@@ -15,6 +15,13 @@
   networking.hostName = "ideapad";
   networking.networkmanager.enable = true;
 
+  # ===== КЛАВИАТУРА =====
+  services.xserver.xkb = {
+    layout = "us,ru";
+    options = "grp:caps_toggle";
+  };
+  console.useXkbConfig = true;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
