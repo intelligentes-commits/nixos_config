@@ -5,6 +5,7 @@
 
   # ===== ПРИЛОЖЕНИЯ =====
   home.packages = with pkgs; [
+    codex
     helium.packages.x86_64-linux.default  # Helium browser
     eza
     ffmpegthumbnailer
@@ -33,6 +34,7 @@
     unzip
     xdg-utils
     yazi
+    zed-editor
     zip
   ];
 

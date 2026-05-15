@@ -31,6 +31,7 @@
 
   # ===== ПАКЕТЫ =====
   programs.fish.enable = true;
+  programs.amnezia-vpn.enable = true;
 
   environment.systemPackages = with pkgs; [
     git
