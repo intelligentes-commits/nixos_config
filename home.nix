@@ -6,7 +6,45 @@
   # ===== ПРИЛОЖЕНИЯ =====
   home.packages = with pkgs; [
     helium.packages.x86_64-linux.default  # Helium browser
+    eza
+    fd
+    ripgrep
   ];
+
+  # ===== SHELL =====
+  programs.fish = {
+    enable = true;
+    shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake .#ideapad";
+      nrt = "sudo nixos-rebuild test --flake .#ideapad";
+      nrb = "sudo nixos-rebuild boot --flake .#ideapad";
+      ncheck = "nix flake check";
+      nup = "nix flake update";
+
+      cat = "bat";
+      ls = "eza --icons --group-directories-first";
+      ll = "eza -la --icons --group-directories-first";
+      la = "eza -a --icons --group-directories-first";
+      grep = "rg";
+    };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.bat.enable = true;
 
   # ===== NIRI =====
   programs.niri = {

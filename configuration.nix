@@ -16,11 +16,14 @@
   # ===== ПОЛЬЗОВАТЕЛИ =====
   users.users.int = { # int = имя пользователя
     isNormalUser = true;
+    shell = pkgs.fish;
     extraGroups = [ "wheel" "networkmanager" ];  # wheel = доступ к sudo
   };
   security.sudo.wheelNeedsPassword = false;  # или true, если хочешь пароль
 
   # ===== ПАКЕТЫ =====
+  programs.fish.enable = true;
+
   environment.systemPackages = with pkgs; [
     git
   ];
