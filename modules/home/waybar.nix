@@ -30,7 +30,7 @@ in
     settings.mainBar = {
       layer = "top";
       position = "top";
-      height = 34;
+      height = 32;
       margin-top = 8;
       margin-left = 10;
       margin-right = 10;
@@ -142,7 +142,7 @@ in
         border: 0;
         border-radius: 0;
         font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font Mono", monospace;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
         min-height: 0;
       }
@@ -173,7 +173,7 @@ in
         border: 1px solid alpha(@blue, 0.20);
         border-radius: 7px;
         margin: 0 2px;
-        padding: 0 10px;
+        padding: 0 9px;
       }
 
       #workspaces {

@@ -14,7 +14,7 @@ in
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
-      font_size = 11.5;
+      font_size = 10.5;
 
       cursor_shape = "beam";
       cursor_beam_thickness = 1.6;
@@ -33,14 +33,14 @@ in
       dynamic_background_opacity = true;
       background_blur = 1;
       hide_window_decorations = "titlebar-only";
-      window_padding_width = 10;
+      window_padding_width = 8;
       confirm_os_window_close = 0;
       enable_audio_bell = false;
 
       tab_bar_style = "hidden";
       tab_bar_min_tabs = 999;
 
-      color0 = "#efe7d5";
+      color0 = "#ebe7dd";
       color1 = c.red;
       color2 = c.green;
       color3 = c.yellow;
@@ -49,13 +49,13 @@ in
       color6 = c.cyan;
       color7 = c.text;
       color8 = c.muted;
-      color9 = "#c83f4b";
-      color10 = "#629555";
-      color11 = "#c18414";
-      color12 = "#3d83b5";
-      color13 = "#a066a0";
-      color14 = "#5e9994";
-      color15 = "#1f1d19";
+      color9 = "#c95b63";
+      color10 = "#709462";
+      color11 = "#bd8425";
+      color12 = "#8a72e6";
+      color13 = "#aa78b0";
+      color14 = "#719995";
+      color15 = "#24211e";
     };
   };
 }

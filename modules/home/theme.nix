@@ -1,22 +1,22 @@
 {
-  name = "daybreak";
+  name = "paper";
 
   colors = {
-    bg = "#f6f2e8";
-    bgAlpha = "#f6f2e8f2";
-    panel = "#fffaf0";
-    panelAlt = "#ece3d1";
-    text = "#2d2a25";
-    muted = "#7d7366";
-    accent = "#2f6f9f";
-    accentSoft = "#dcebf3";
-    accentDark = "#184f73";
-    green = "#4f7d45";
-    yellow = "#a66f00";
-    red = "#b72d3a";
-    magenta = "#8d5a8e";
-    cyan = "#4b7f7a";
-    shadow = "#6f645533";
-    shadowStrong = "#6f645544";
+    bg = "#f7f5ef";
+    bgAlpha = "#f7f5eff2";
+    panel = "#efede6";
+    panelAlt = "#e4e1d8";
+    text = "#34312d";
+    muted = "#8a857c";
+    accent = "#9a7cff";
+    accentSoft = "#ece7ff";
+    accentDark = "#6f57cc";
+    green = "#5f7f52";
+    yellow = "#a17218";
+    red = "#b84c55";
+    magenta = "#9b6ba2";
+    cyan = "#5f8580";
+    shadow = "#5f574833";
+    shadowStrong = "#5f574844";
   };
 }

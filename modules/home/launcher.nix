@@ -13,7 +13,7 @@ in
     exclusive-zone = -1
 
     font = JetBrainsMono Nerd Font
-    font-size = 20
+    font-size = 18
     prompt-text = "apps: "
     placeholder-text = "Type to search"
     text-cursor = true
