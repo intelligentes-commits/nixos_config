@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, niri, ... }:
 
 {
   imports = [
@@ -39,6 +39,10 @@
   # ===== ПАКЕТЫ =====
   programs.fish.enable = true;
   programs.amnezia-vpn.enable = true;
+  programs.niri = {
+    enable = true;
+    package = niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-unstable;
+  };
 
   environment.systemPackages = with pkgs; [
     git

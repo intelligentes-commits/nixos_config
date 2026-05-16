@@ -23,6 +23,7 @@
   outputs = { nixpkgs, home-manager, niri, helium, ... }: {
     nixosConfigurations.ideapad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit niri; };
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager
@@ -31,7 +32,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.int = import ./home.nix;
           home-manager.sharedModules = [ niri.homeModules.niri ];
-          home-manager.extraSpecialArgs = { inherit helium; };
+          home-manager.extraSpecialArgs = { inherit helium niri; };
         }
       ];
     };
