@@ -3,6 +3,9 @@
 let
   theme = import ./theme.nix;
   c = theme.colors;
+  dark = theme.name == "dusk";
+  gtkThemeName = if dark then "adw-gtk3-dark" else "adw-gtk3";
+  qtStyleName = if dark then "adwaita-dark" else "adwaita";
 in
 
 {
@@ -17,6 +20,10 @@ in
         NIXOS_OZONE_WL = "1";
         XCURSOR_THEME = "Bibata-Modern-Classic";
         XCURSOR_SIZE = "20";
+        GTK_THEME = gtkThemeName;
+        QT_QPA_PLATFORMTHEME = "gtk2";
+        QT_STYLE_OVERRIDE = qtStyleName;
+        QT_PLUGIN_PATH = "/etc/profiles/per-user/int/lib/qt-5.15.18/plugins:/etc/profiles/per-user/int/lib/qt-6/plugins";
       };
       hotkey-overlay.skip-at-startup = true;
 
