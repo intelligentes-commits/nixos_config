@@ -1,5 +1,10 @@
 { config, pkgs, niri, ... }:
 
+let
+  theme = import ./theme.nix;
+  c = theme.colors;
+in
+
 {
   programs.niri = {
     enable = true;
@@ -61,7 +66,7 @@
 
       layout = {
         gaps = 12;
-        background-color = "#1f1f28";
+        background-color = c.bg;
         center-focused-column = "on-overflow";
         always-center-single-column = true;
         default-column-width.proportion = 0.5;
@@ -80,9 +85,9 @@
         focus-ring = {
           enable = true;
           width = 3;
-          active.color = "#7e9cd8";
-          inactive.color = "#54546d";
-          urgent.color = "#e82424";
+          active.color = c.accent;
+          inactive.color = c.panelAlt;
+          urgent.color = c.red;
         };
 
         border.enable = false;
@@ -95,7 +100,7 @@
             x = 0;
             y = 5;
           };
-          color = "#00000055";
+          color = c.shadow;
         };
 
         struts = {
@@ -137,14 +142,14 @@
               x = 0;
               y = 4;
             };
-            color = "#00000066";
+            color = c.shadowStrong;
           };
         }
       ];
 
       binds = with config.lib.niri.actions; {
         "Mod+T".action = spawn "kitty";
-        "Mod+D".action = spawn "fuzzel";
+        "Mod+D".action = spawn "tofi-drun" "--drun-launch=true";
         "Mod+Q".action = close-window;
         "Mod+Shift+E".action = quit;
         "Mod+Slash".action = show-hotkey-overlay;
@@ -234,7 +239,7 @@
         "Mod+Alt+Shift+V".action = switch-focus-between-floating-and-tiling;
         "Mod+Escape".action = toggle-keyboard-shortcuts-inhibit;
 
-        "Mod+V".action = spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy";
+        "Mod+V".action = spawn "sh" "-c" "cliphist list | tofi --prompt-text 'clipboard: ' | cliphist decode | wl-copy";
         "Print".action = spawn "sh" "-c" "mkdir -p ~/Pictures/Screenshots && grim ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png";
         "Shift+Print".action = spawn "sh" "-c" "grim -g \"$(slurp)\" - | wl-copy";
         "Mod+Shift+S".action = spawn "sh" "-c" "mkdir -p ~/Pictures/Screenshots && grim -g \"$(slurp)\" ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png";

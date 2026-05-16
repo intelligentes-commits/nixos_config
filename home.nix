@@ -6,7 +6,7 @@
     ./modules/home/shell.nix
     ./modules/home/desktop-assets.nix
     ./modules/home/niri.nix
-    ./modules/home/fuzzel.nix
+    ./modules/home/launcher.nix
     ./modules/home/kitty.nix
     ./modules/home/editor.nix
     ./modules/home/waybar.nix

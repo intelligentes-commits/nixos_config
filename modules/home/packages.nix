@@ -1,5 +1,9 @@
 { pkgs, helium, ... }:
 
+let
+  vibez = pkgs.callPackage ../../packages/vibez.nix { };
+in
+
 {
   home.packages = with pkgs; [
     codex
@@ -33,8 +37,10 @@
     ripgrep
     awww
     telegram-desktop
+    tofi
     unrar
     unzip
+    vibez
     xdg-utils
     yazi
     zed-editor

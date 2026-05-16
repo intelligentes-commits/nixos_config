@@ -1,5 +1,10 @@
 { ... }:
 
+let
+  theme = import ./theme.nix;
+  c = theme.colors;
+in
+
 {
   xdg.configFile."waybar/scripts/niri-language".text = ''
     #!/usr/bin/env bash
@@ -124,14 +129,14 @@
     };
 
     style = ''
-      @define-color bg #1f1f28;
-      @define-color panel #2a2a37;
-      @define-color text #dcd7ba;
-      @define-color muted #727169;
-      @define-color blue #7e9cd8;
-      @define-color green #98bb6c;
-      @define-color yellow #e6c384;
-      @define-color red #e82424;
+      @define-color bg ${c.bg};
+      @define-color panel ${c.panel};
+      @define-color text ${c.text};
+      @define-color muted ${c.muted};
+      @define-color blue ${c.accent};
+      @define-color green ${c.green};
+      @define-color yellow ${c.yellow};
+      @define-color red ${c.red};
 
       * {
         border: 0;
@@ -164,8 +169,8 @@
       #network,
       #pulseaudio,
       #battery {
-        background: alpha(@panel, 0.92);
-        border: 1px solid alpha(@blue, 0.22);
+        background: alpha(@panel, 0.94);
+        border: 1px solid alpha(@blue, 0.20);
         border-radius: 7px;
         margin: 0 2px;
         padding: 0 10px;
@@ -183,12 +188,12 @@
       }
 
       #workspaces button.active {
-        background: alpha(@blue, 0.22);
+        background: alpha(@blue, 0.16);
         color: @blue;
       }
 
       #workspaces button:hover {
-        background: alpha(@blue, 0.14);
+        background: alpha(@blue, 0.10);
         color: @text;
       }
 
