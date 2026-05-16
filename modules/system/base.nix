@@ -10,6 +10,8 @@
   networking.hostName = "ideapad";
   networking.networkmanager.enable = true;
 
+  time.timeZone = "Europe/Moscow";
+
   services.xserver.xkb = {
     layout = "us,ru";
     options = "grp:caps_toggle";
