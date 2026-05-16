@@ -5,6 +5,7 @@
     ./modules/home/packages.nix
     ./modules/home/shell.nix
     ./modules/home/desktop-assets.nix
+    ./modules/home/toolkit-theme.nix
     ./modules/home/niri.nix
     ./modules/home/launcher.nix
     ./modules/home/kitty.nix
