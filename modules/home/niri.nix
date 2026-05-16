@@ -13,8 +13,17 @@ in
       prefer-no-csd = true;
       screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
 
-      environment.NIXOS_OZONE_WL = "1";
+      environment = {
+        NIXOS_OZONE_WL = "1";
+        XCURSOR_THEME = "Bibata-Modern-Classic";
+        XCURSOR_SIZE = "20";
+      };
       hotkey-overlay.skip-at-startup = true;
+
+      cursor = {
+        theme = "Bibata-Modern-Classic";
+        size = 20;
+      };
 
       input = {
         focus-follows-mouse = {
@@ -112,6 +121,12 @@ in
       };
 
       window-rules = [
+        {
+          matches = [
+            { app-id = "^(helium|firefox|zen|chromium|google-chrome|brave-browser)$"; }
+          ];
+          scroll-factor = 0.55;
+        }
         {
           geometry-corner-radius = {
             top-left = 12.0;
